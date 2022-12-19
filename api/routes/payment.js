@@ -12,6 +12,17 @@ router.get("/getPaymentDetails", async (req, res) => {
     }
 });
 
+// Get All Payment Data
+router.get("/getSinglePaymentDetails/:id", async (req, res) => {
+    const getSinglePaymentDetails = await paymentModel.findOne({ _id: req.params.id });
+    if (getSinglePaymentDetails) {
+        return res.status(200).json(getSinglePaymentDetails);
+    } else {
+        return res.status(401).json({ error: "Something Went Wrong!!!" });
+    }
+});
+
+// Update Payment Details
 router.post("/updateItemDetails", async (req, res) => {
     const paymentDetails = {
         vendor_name: req.body.vendor_name,
