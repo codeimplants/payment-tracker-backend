@@ -27,7 +27,6 @@ const payment = new mongoose.Schema({
     },
     receipt_url: {
         type: String,
-        required: true
     },
     other_details: {
         type: String
