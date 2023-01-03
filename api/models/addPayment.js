@@ -13,7 +13,7 @@ const payment = new mongoose.Schema({
         type: String,
         required: true
     },
-    total_amount: {
+    total_payment: {
         type: Number,
         required: true
     },
@@ -23,6 +23,14 @@ const payment = new mongoose.Schema({
     },
     balance_payment: {
         type: Number,
+        required: true
+    },
+    payment_date: {
+        type: String,
+        required: true
+    },
+    due_date: {
+        type: String,
         required: true
     },
     receipt_url: {
